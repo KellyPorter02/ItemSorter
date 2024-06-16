@@ -6,6 +6,7 @@ import rocks.zipcode.io.Item;
 import rocks.zipcode.io.ItemSorter;
 import rocks.zipcode.io.comparators.IdComparator;
 import rocks.zipcode.io.comparators.IdComparator;
+import rocks.zipcode.io.comparators.ItemComparator;
 
 import java.util.Comparator;
 
@@ -23,10 +24,9 @@ public class SortByIdTest {
         Item[] itemsToSort = {item2, item1, item3};
         Item[] expected = {item3, item2, item1};
         ItemSorter itemSorter = new ItemSorter(itemsToSort);
-        Comparator<Item> comparator = (Comparator<Item>) new IdComparator();
 
         // when
-        Item[] actual = itemSorter.sort(comparator);
+        Item[] actual = itemSorter.sort(ItemComparator.ID);
 
         // then
         Assert.assertArrayEquals(expected, actual);
@@ -41,10 +41,9 @@ public class SortByIdTest {
         Item[] itemsToSort = {item2, item1, item3};
         Item[] expected = {item3, item2, item1};
         ItemSorter itemSorter = new ItemSorter(itemsToSort);
-        Comparator<Item> comparator = (Comparator<Item>) new IdComparator();
 
         // when
-        Item[] actual = itemSorter.sort(comparator);
+        Item[] actual = itemSorter.sort(ItemComparator.ID);
 
         // then
         Assert.assertArrayEquals(expected, actual);
@@ -59,10 +58,9 @@ public class SortByIdTest {
         Item[] itemsToSort = {item2, item1, item3};
         Item[] expected = {item3, item2, item1};
         ItemSorter itemSorter = new ItemSorter(itemsToSort);
-        Comparator<Item> comparator = (Comparator<Item>) new IdComparator();
 
         // when
-        Item[] actual = itemSorter.sort(comparator);
+        Item[] actual = itemSorter.sort(ItemComparator.ID);
 
         // then
         Assert.assertArrayEquals(expected, actual);

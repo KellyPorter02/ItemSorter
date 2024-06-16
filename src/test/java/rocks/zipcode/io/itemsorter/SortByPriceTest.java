@@ -4,6 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import rocks.zipcode.io.Item;
 import rocks.zipcode.io.ItemSorter;
+import rocks.zipcode.io.comparators.ItemComparator;
 import rocks.zipcode.io.comparators.PriceComparator;
 
 import java.util.Comparator;
@@ -22,10 +23,9 @@ public class SortByPriceTest {
         Item[] itemsInput = {item1, item2, item3};
         Item[] itemsExpected = {item2, item1, item3};
         ItemSorter sorter = new ItemSorter(itemsInput);
-        Comparator<Item> c = new PriceComparator();
 
         // when
-        Item[] itemsReturned = sorter.sort(c);
+        Item[] itemsReturned = sorter.sort(ItemComparator.PRICE);
 
         // then
         Assert.assertArrayEquals(itemsExpected, itemsReturned);
@@ -40,10 +40,9 @@ public class SortByPriceTest {
         Item[] itemsInput = {item1, item2, item3};
         Item[] itemsExpected = {item2, item3, item1};
         ItemSorter sorter = new ItemSorter(itemsInput);
-        Comparator<Item> c = new PriceComparator();
 
         // when
-        Item[] itemsReturned = sorter.sort(c);
+        Item[] itemsReturned = sorter.sort(ItemComparator.PRICE);
 
         // then
         Assert.assertArrayEquals(itemsExpected, itemsReturned);
@@ -58,10 +57,9 @@ public class SortByPriceTest {
         Item[] itemsInput = {item1, item2, item3};
         Item[] itemsExpected = {item1, item3, item2};
         ItemSorter sorter = new ItemSorter(itemsInput);
-        Comparator<Item> c = new PriceComparator();
 
         // when
-        Item[] itemsReturned = sorter.sort(c);
+        Item[] itemsReturned = sorter.sort(ItemComparator.PRICE);
 
         // then
         Assert.assertArrayEquals(itemsExpected, itemsReturned);

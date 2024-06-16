@@ -4,6 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import rocks.zipcode.io.Item;
 import rocks.zipcode.io.ItemSorter;
+import rocks.zipcode.io.comparators.ItemComparator;
 import rocks.zipcode.io.comparators.NameComparator;
 
 import java.util.Comparator;
@@ -21,10 +22,9 @@ public class SortByNameTest {
         Item[] itemsToSort = {item2, item1, item3};
         Item[] expected = {item3, item2, item1};
         ItemSorter itemSorter = new ItemSorter(itemsToSort);
-        Comparator<Item> comparator = (Comparator<Item>) new NameComparator();
 
         // when
-        Item[] actual = itemSorter.sort(comparator);
+        Item[] actual = itemSorter.sort(ItemComparator.NAME);
 
         // then
         Assert.assertArrayEquals(expected, actual);
@@ -39,10 +39,9 @@ public class SortByNameTest {
         Item[] itemsToSort = {item2, item1, item3};
         Item[] expected = {item3, item2, item1};
         ItemSorter itemSorter = new ItemSorter(itemsToSort);
-        Comparator<Item> comparator = (Comparator<Item>) new NameComparator();
 
         // when
-        Item[] actual = itemSorter.sort(comparator);
+        Item[] actual = itemSorter.sort(ItemComparator.NAME);
 
         // then
         Assert.assertArrayEquals(expected, actual);
@@ -58,10 +57,9 @@ public class SortByNameTest {
         Item[] itemsToSort = {item2, item1, item3};
         Item[] expected = {item3, item2, item1};
         ItemSorter itemSorter = new ItemSorter(itemsToSort);
-        Comparator<Item> comparator = (Comparator<Item>) new NameComparator();
 
         // when
-        Item[] actual = itemSorter.sort(comparator);
+        Item[] actual = itemSorter.sort(ItemComparator.NAME);
 
         // then
         Assert.assertArrayEquals(expected, actual);
